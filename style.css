@@ -85,7 +85,7 @@ header {
  }
 
 .toggle-icon.hidden {
-    left: 265px; /* Adjust for sidebar width */
+    left: 265px;
 }
 
 .categories {
