@@ -58,7 +58,7 @@ header {
     padding: 1rem;
     border-bottom: 1px solid #374151;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
 }
 
 .sidebar ul li:hover {
