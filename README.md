@@ -2,4 +2,4 @@
 
 Simulation of an Amazon-style website with products, account creation and login, etc.
 
-Created by Alex and Joshua "Trev"
+Created by Raul and Joshua "Trev"
