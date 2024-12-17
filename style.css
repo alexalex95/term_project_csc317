@@ -66,7 +66,25 @@ header {
 }
 
 .sidebar.hidden {
-            transform: translateX(-250px);
+    transform: translateX(-250px);
+}
+
+.toggle-icon {
+	position: fixed;
+	top: 15px;
+    left: 15px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+ }
+
+.toggle-icon.hidden {
+    left: 265px; /* Adjust for sidebar width */
 }
 
 .categories {
