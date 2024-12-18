@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #e6e6fa; /* Light purple */
+            color: #5a189a; /* Dark purple */
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hamburger-menu {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu-icons a {
+            color: #5a189a;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+
+        /* Account Container */
+        .account-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 2rem;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: white;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form {
+            flex: 1;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f8f8ff; /* Light pastel background */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form h2 {
+            text-align: center;
+            color: #5a189a; /* Dark purple */
+            margin-bottom: 1rem;
+        }
+
+        .form label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .form input:focus {
+            outline: none;
+            border-color: #5a189a;
+            box-shadow: 0 0 5px rgba(90, 24, 154, 0.3);
+        }
+
+        .form button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 1.5rem;
+            background-color: #5a189a; /* Dark purple */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form button:hover {
+            background-color: #9d4edd; /* Lighter purple */
+        }
+
+        .divider {
+            border-top: 1px solid #ddd;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+            <div class="store-name">
+                <h1>Account</h1>
+            </div>
+            <div class="menu-icons">
+                <a href="index.html"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Account Section -->
+    <main>
+        <div class="account-container">
+            <!-- Login Form -->
+            <div class="form login-form">
+                <h2>Login</h2>
+                <form action="#">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="form signup-form">
+                <h2>Sign Up</h2>
+                <form action="#">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+
+                    <label for="signup-confirm-password">Confirm Password:</label>
+                    <input type="password" id="signup-confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            alert("Sidebar toggle function placeholder.");
+        }
+    </script>
+</body>
+</html>

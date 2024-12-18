@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes and Meals</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Styles for Recipes and Meals Page */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #e6e6fa; /* Light purple */
+            color: #5a189a;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-icons {
+            position: relative;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            color: #5a189a;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            font-size: 0.8rem;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .category {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        .category img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .category p {
+            margin: 0.5rem 0 0;
+            font-weight: bold;
+            color: #5a189a;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            background-color: #1e293b;
+            color: white;
+            height: 100%;
+            padding: 1rem;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.visible {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 1rem 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+            <div class="store-name"><h1>Recipes and Meals</h1></div>
+            <div class="menu-icons">
+                <a href="../payment.html"><i class="fas fa-credit-card"></i></a>
+                <a href="../account.html"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="../myaccount.html"><i class="fas fa-user"></i></a>
+                <a href="#" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count" class="cart-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li onclick="toggleMenu()">&#9776; Close</li>
+            <li><a href="../index.html">Main Menu</a></li>
+            <li><a href="page_drink.html">Drinks and Beverages</a></li>
+            <li>Recipes and Meals</li>
+            <li><a href="page_kitchenware.html">Kitchenware</a></li>
+            <li><a href="page_merch.html">Merch</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="categories">
+            <!-- Sample Recipes and Meals -->
+            <div class="category" onclick="addToCart('Chicken')">
+                <img src="../images/chicken.jpg" alt="Chicken">
+                <p>Chicken - $10.00</p>
+            </div>
+            <div class="category" onclick="addToCart('Beef')">
+                <img src="../images/beef.jpg" alt="Beef">
+                <p>Beef - $15.00</p>
+            </div>
+            <div class="category" onclick="addToCart('Turkey')">
+                <img src="../images/turkey.jpg" alt="Turkey">
+                <p>Turkey - $12.00</p>
+            </div>
+            <div class="category" onclick="addToCart('Turkey Dinner')">
+                <img src="../images/turkey_dinner.jpg" alt="Turkey Dinner">
+                <p>Turkey Dinner - $25.00</p>
+            </div>
+            <div class="category" onclick="addToCart('Vegetables')">
+                <img src="../images/vegetables.jpg" alt="Vegetables">
+                <p>Vegetables - $8.00</p>
+            </div>
+            <div class="category" onclick="addToCart('Dinner Recipes')">
+                <img src="../images/dinner_recipes.jpg" alt="Dinner Recipes">
+                <p>Dinner Recipes - $20.00</p>
+            </div>
+            <div class="category" onclick="addToCart('Seafood')">
+                <img src="../images/seafood.jpg" alt="Seafood">
+                <p>Seafood - $18.00</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script>
+        let cartCount = 0;
+
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('visible');
+        }
+
+        function addToCart(item) {
+            const confirmAdd = confirm(`Do you want to add ${item} to your cart?`);
+            if (confirmAdd) {
+                cartCount++;
+                const cartBadge = document.getElementById('cart-count');
+                cartBadge.style.display = 'inline-block';
+                cartBadge.textContent = cartCount;
+            }
+        }
+    </script>
+</body>
+</html>
+

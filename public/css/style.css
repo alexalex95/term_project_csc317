@@ -1,0 +1,158 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333; /* Default text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up full height */
+}
+
+/* Header Banner */
+header {
+    background-color: #e6e6fa; /* Light purple */
+    color: #5a189a; /* Dark purple text for visibility */
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #5a189a; /* Dark purple */
+}
+
+.menu-icons a {
+    color: #5a189a; /* Dark purple */
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu-icons a:hover {
+    color: #9d4edd; /* Lighter purple on hover */
+}
+
+.store-name h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #4b0082; /* Slightly darker purple */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #1e293b; /* Dark navy blue */
+    color: #e6e6fa; /* Light purple text */
+    padding-top: 4rem;
+    transition: left 0.3s ease;
+}
+
+.sidebar.visible {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 1rem;
+    border-bottom: 1px solid #374151;
+    cursor: pointer;
+    color: #e6e6fa; /* Light purple text */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #2563eb;
+    color: #ffffff; /* White text on hover */
+}
+
+/* Categories Grid */
+main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding: 6rem 1rem 2rem; /* Space for fixed header */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.category {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333; /* Default text */
+}
+
+.category img {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+.category p {
+    margin: 0.5rem 0 0;
+    font-weight: bold;
+    color: #5a189a; /* Dark purple for visibility */
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #1e293b; /* Dark navy blue */
+    color: #e6e6fa; /* Light purple text */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Keeps the footer at the bottom */
+    font-size: 0.9rem;
+}
+
+/* Banner Section */
+.banner {
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    background-image: url('images/sfsu-banner.jpeg'); /* Image path */
+    background-size: cover; /* Ensures image covers the banner */
+    background-position: center center; /* Displays the central part of the image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+}
+
+.banner img {
+    width: 100%; /* Makes the image span the full width */
+    height: auto; /* Maintains image aspect ratio */
+    display: block; /* Removes bottom spacing */
+}

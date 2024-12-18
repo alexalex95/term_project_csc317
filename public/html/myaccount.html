@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* My Account Page Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #e6e6fa; /* Light purple */
+            color: #5a189a; /* Dark purple */
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hamburger-menu {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu-icons a {
+            color: #5a189a;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+
+        .account-container {
+            max-width: 800px;
+            margin: 5rem auto 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #5a189a;
+            border-bottom: 2px solid #e6e6fa;
+            padding-bottom: 0.5rem;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-section img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            border: 2px solid #e6e6fa;
+        }
+
+        .editable-field {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .editable-field label {
+            flex: 1;
+            font-weight: bold;
+            color: #5a189a;
+        }
+
+        .editable-field input {
+            flex: 2;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Preferences */
+        .preferences-section input {
+            margin-right: 0.5rem;
+        }
+
+        button {
+            background-color: #5a189a;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: block;
+            margin: 2rem auto 0;
+        }
+
+        button:hover {
+            background-color: #9d4edd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+            <div class="store-name">
+                <h1>My Account</h1>
+            </div>
+            <div class="menu-icons">
+                <a href="index.html"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Account Information -->
+    <main>
+        <div class="account-container">
+            <!-- Profile Section -->
+            <h2>Profile Information</h2>
+            <div class="profile-section">
+                <img src="images/pic.jpeg" alt="Profile Picture">
+                <div>
+                    <div class="editable-field">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" value="Raul Hernandez">
+                    </div>
+                    <div class="editable-field">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" value="raul@example.com">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Details -->
+            <div class="details-section">
+                <h2>Account Details</h2>
+                <div class="editable-field">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" value="(123) 456-7890">
+                </div>
+                <div class="editable-field">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" value="123 Main Street, San Francisco, CA">
+                </div>
+            </div>
+
+            <!-- Preferences -->
+            <div class="preferences-section">
+                <h2>Preferences</h2>
+                <p>
+                    <label>
+                        <input type="checkbox" checked> Receive Promotional Emails
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" checked> Enable Order Notifications
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox"> Subscribe to Newsletter
+                    </label>
+                </p>
+            </div>
+
+            <!-- Save Button -->
+            <button onclick="saveChanges()">Save Changes</button>
+        </div>
+    </main>
+
+    <!-- Placeholder for Sidebar Script -->
+    <script>
+        function toggleMenu() {
+            alert("Sidebar toggle function placeholder.");
+        }
+
+        function saveChanges() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            alert(`Changes Saved:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}`);
+        }
+    </script>
+</body>
+</html>

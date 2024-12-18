@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary & Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Payment Page Specific Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #e6e6fa; /* Light purple */
+            color: #5a189a; /* Dark purple */
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hamburger-menu {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu-icons a {
+            color: #5a189a;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+
+        .payment-container {
+            background-color: white;
+            max-width: 800px;
+            margin: 5rem auto 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #e6e6fa;
+            padding-bottom: 0.5rem;
+            color: #5a189a;
+        }
+
+        .order-summary {
+            margin-bottom: 2rem;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary th, .order-summary td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-summary th {
+            color: #5a189a;
+            font-weight: bold;
+        }
+
+        .order-summary .total {
+            font-weight: bold;
+            color: #333;
+        }
+
+        form label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        form input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .payment-buttons {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        button {
+            background-color: #5a189a;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #9d4edd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+            <div class="store-name">
+                <h1>Payment</h1>
+            </div>
+            <div class="menu-icons">
+                <a href="index.html"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Payment Section -->
+    <main>
+        <div class="payment-container">
+            <h2>Order Summary</h2>
+            <div class="order-summary">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Red Wine - Cabernet Sauvignon</td>
+                            <td>Drinks & Beverages</td>
+                            <td>$35.00</td>
+                        </tr>
+                        <tr>
+                            <td>Stainless Steel Cooking Pot</td>
+                            <td>Kitchenware</td>
+                            <td>$45.00</td>
+                        </tr>
+                        <tr>
+                            <td>Wooden Spatula Set</td>
+                            <td>Kitchenware</td>
+                            <td>$12.00</td>
+                        </tr>
+                        <tr>
+                            <td>Beach Towel with Logo</td>
+                            <td>Merchandise</td>
+                            <td>$20.00</td>
+                        </tr>
+                        <tr class="total">
+                            <td colspan="2">Total</td>
+                            <td>$112.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Payment Details</h2>
+            <form action="#">
+                <label for="card-name">Name on Card:</label>
+                <input type="text" id="card-name" name="card-name" placeholder="John Doe" required>
+
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+
+                <div class="payment-buttons">
+                    <button type="button">Pay with Google Pay</button>
+                    <button type="submit">Pay Now</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            alert("Sidebar toggle function placeholder.");
+        }
+    </script>
+</body>
+</html>

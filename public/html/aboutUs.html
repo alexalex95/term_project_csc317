@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* About Us Page Specific Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #e6e6fa; /* Light purple */
+            color: #5a189a; /* Dark purple */
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hamburger-menu {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu-icons a {
+            color: #5a189a;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 5rem auto 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #5a189a;
+            border-bottom: 2px solid #e6e6fa;
+            padding-bottom: 0.5rem;
+        }
+
+        .mission-section, .team-section, .contact-section {
+            margin-top: 2rem;
+        }
+
+        .team-section .team-member {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+            border: 2px solid #e6e6fa;
+        }
+
+        .contact-section p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-section a {
+            color: #5a189a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+            <div class="store-name">
+                <h1>About Us</h1>
+            </div>
+            <div class="menu-icons">
+                <a href="index.html"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Content -->
+    <main>
+        <div class="about-container">
+            <!-- Welcome Section -->
+            <h2>Welcome to SFSU Store!</h2>
+            <p>At <strong>SFSU Store</strong>, we pride ourselves on delivering high-quality products at affordable prices. Founded by students from <strong>San Francisco State University</strong>, our mission is to combine passion and creativity to offer a seamless shopping experience for our customers.</p>
+
+            <!-- Mission Section -->
+            <div class="mission-section">
+                <h3>Our Mission</h3>
+                <p>Our mission is to:</p>
+                <ul>
+                    <li>Provide top-notch kitchenware, beverages, and merchandise.</li>
+                    <li>Offer a user-friendly, enjoyable online shopping experience.</li>
+                    <li>Support local creativity and innovation through unique products.</li>
+                </ul>
+            </div>
+
+            <!-- Meet the Team Section -->
+            <div class="team-section">
+                <h3>Meet the Team</h3>
+                <div class="team-member">
+                    
+                    <div>
+                        <strong>Raul Hernandez</strong>
+                        <p>Co-Founder & CPO</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    
+                    <div>
+                        <strong>Trev</strong>
+                        <p>Co-Founder & CMO</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Us Section -->
+            <div class="contact-section">
+                <h3>Contact Us</h3>
+                <p>Have any questions? Feel free to reach out!</p>
+                <p>Email: <a href="mailto:support@sfsustore.com">support@sfsustore.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Placeholder for Sidebar Script -->
+    <script>
+        function toggleMenu() {
+            alert("Sidebar toggle function placeholder.");
+        }
+    </script>
+</body>
+</html>
